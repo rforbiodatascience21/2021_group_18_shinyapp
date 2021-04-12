@@ -1,4 +1,4 @@
-library(shiny)
+library("shiny")
 library("tidyverse")
 library("fs")
 library("patchwork")
@@ -28,9 +28,9 @@ gravier_data_long_nested <- gravier_data_long %>%
   sample_n(20)
 
 #List of gene names
-#gene_id <- gravier_data_long_nested %>%
-  #select(gene) %>%
-  #unique() 
+gene_id <- gravier_data_long_nested %>%
+  select(gene) %>%
+  unique() 
 
 ui <- fluidPage(
   fluidRow(
@@ -51,10 +51,11 @@ server <- function(input, output, session) {
     #ggplot(gravier_data_long_nested, mapping = aes(x = c(1:168), log2_expr_level)) +
       #geom_line()})}
 
-#shinyApp(ui = ui, server = server)
+shinyApp(ui = ui, server = server)
     
     
   
-gravier_data_long_nested %>% 
-  select()
+#gravier_data_long_nested %>% 
+#  select()
   
+
